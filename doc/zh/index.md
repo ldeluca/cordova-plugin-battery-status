@@ -19,48 +19,48 @@
 
 # org.apache.cordova.battery-地位
 
-这个插件提供的旧版本的[电池状态事件 API][1]实现的.
+這個外掛程式提供的舊版本的[電池狀態事件 API][1]實現的.
 
  [1]: http://www.w3.org/TR/2011/WD-battery-status-20110915/
 
-它将添加以下三 `window` 事件：
+它將添加以下三 `window` 事件：
 
 *   batterystatus
 *   batterycritical
 *   batterylow
 
-## 安装
+## 安裝
 
     cordova plugin add org.apache.cordova.battery-status
     
 
 ## batterystatus
 
-当电池电量的百分比改变了至少 1%，或如果在插入或拔出该设备会触发此事件。
+當電池計量的百分比改變了至少 1%，或如果在插入或拔出該設備會觸發此事件。
 
-电池状态处理程序传递一个对象，包含两个属性：
+電池狀態處理常式傳遞一個物件，包含兩個屬性：
 
-*   **level**: 电池充电 (0-100) 的百分比。*(Number)*
+*   **級別**: 電池充電 (0-100) 的百分比。*（人數）*
 
-*   **isPlugged**： 一个布尔值，该值指示设备是否被插入*(Boolean)*
+*   **isPlugged**： 一個布林值，該值指示設備是否插*(布林值)*
 
-应用程序通常应使用 `window.addEventListener` 将一个事件侦听器附加一次 `deviceready` 事件火灾。 例如：
+應用程式通常應使用 `window.addEventListener` 將一個事件攔截器附加一次 `deviceready` 事件火災。 例如：
 
-### 支持的平台
+### 支援的平臺
 
-*   亚马逊火 OS
+*   亞馬遜火 OS
 *   iOS
-*   Android 系统
+*   Android 系統
 *   黑莓 10
 *   Windows Phone 7 和 8
 *   Tizen
-*   火狐浏览器操作系统
+*   火狐瀏覽器作業系統
 
-### Windows Phone 7 和 8 的怪异
+### Windows Phone 7 和 8 怪癖
 
-Windows Phone 7 并不提供本机 Api 来确定电池电量水平，所以 `level` 是不可用的属性。`isPlugged`参数*is*是支持的。
+Windows Phone 7 並不提供本機 Api 來確定電池計量水準，所以 `level` 是不可用的屬性。`isPlugged`參數**支援的。
 
-### 例子
+### 示例
 
     window.addEventListener("batterystatus", onBatteryStatus, false);
     
@@ -72,24 +72,24 @@ Windows Phone 7 并不提供本机 Api 来确定电池电量水平，所以 `lev
 
 ## batterycritical
 
-当电池电量的百分比已达到临界电池值时，将触发该事件。值是特定于设备的。
+當電池計量的百分比已達到關鍵電池閾值時，將觸發該事件。值是特定于設備。
 
-`batterycritical`处理程序传递一个对象，包含两个属性：
+`batterycritical`處理常式傳遞一個物件，包含兩個屬性：
 
-*   **级别**: 电池充电 (0-100) 的百分比。*（人数）*
+*   **級別**: 電池充電 (0-100) 的百分比。*（人數）*
 
-*   **isPlugged**： 一个布尔值，该值指示设备是否插*(布尔值)*
+*   **isPlugged**： 一個布林值，該值指示設備是否插*(布林值)*
 
-一旦`deviceready` 事件触发了，应用程序通常应该使用 `window.addEventListener`附加一个事件侦听器。
+應用程式通常應使用 `window.addEventListener` 將一個事件攔截器附加一次 `deviceready` 事件火災。
 
-### 支持的平台
+### 支援的平臺
 
-*   亚马逊火 OS
+*   亞馬遜火 OS
 *   iOS
-*   Android 系统
+*   Android 系統
 *   黑莓 10
 *   Tizen
-*   火狐浏览器操作系统
+*   火狐瀏覽器作業系統
 
 ### 示例
 
@@ -103,24 +103,24 @@ Windows Phone 7 并不提供本机 Api 来确定电池电量水平，所以 `lev
 
 ## batterylow
 
-当电池电量的百分比已达到电池低电量设备特定值时，将触发该事件。
+當電池計量的百分比已達到電池計量低門檻，設備特定值時，將觸發該事件。
 
-`batterylow`处理程序传递一个对象，包含两个属性：
+`batterylow`處理常式傳遞一個物件，包含兩個屬性：
 
-*   **级别**: 电池充电 (0-100) 的百分比。*（人数）*
+*   **級別**: 電池充電 (0-100) 的百分比。*（人數）*
 
-*   **isPlugged**： 一个布尔值，该值指示设备是否插*(布尔值)*
+*   **isPlugged**： 一個布林值，該值指示設備是否插*(布林值)*
 
-一旦`deviceready` 事件触发了，应用程序通常应该使用 `window.addEventListener`附加一个事件侦听器。
+應用程式通常應使用 `window.addEventListener` 將一個事件攔截器附加一次 `deviceready` 事件火災。
 
-### 支持的平台
+### 支援的平臺
 
-*   亚马逊火 OS
+*   亞馬遜火 OS
 *   iOS
-*   Android 系统
+*   Android 系統
 *   黑莓 10
 *   Tizen
-*   火狐浏览器操作系统
+*   火狐瀏覽器作業系統
 
 ### 示例
 
